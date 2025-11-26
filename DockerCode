@@ -1,0 +1,28 @@
+Create project folder:
+mkdir DockerWebApp
+cd DockerWebApp
+
+Create a simple index.html:
+echo "<h1>Hello from Docker Nginx!</h1>" > index.html
+
+Create a Dockerfile:
+nano Dockerfile
+# Use official nginx image
+FROM nginx:latest
+
+# Copy HTML file to nginx default folder
+COPY index.html /usr/share/nginx/html/
+
+Build the Docker image:
+docker build -t mywebapp:1.0 .
+
+Run the container and map ports:
+docker run -d -p 8080:80 --name mywebcontainer mywebapp:1.0
+
+Your webpage will be available at:
+http://localhost:8080  run this on browser
+
+Confirm it is running: docker ps
+Stop the container : docker stop mywebcontainer
+Remove the container: docker rm mywebcontainer
+
