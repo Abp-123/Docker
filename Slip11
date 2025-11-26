@@ -1,0 +1,45 @@
+Step 1: Create a Simple Application
+Create a project folder:
+mkdir docker-app
+cd docker-app
+
+
+Create an index.html file:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Docker</title>
+</head>
+<body>
+    <h1>Hello, Docker! My first containerized application.</h1>
+</body>
+</html>
+
+Step 2: Create a Dockerfile
+Inside the same folder, create a file named Dockerfile:
+# Use an official lightweight web server
+FROM nginx:alpine
+
+# Copy application code into Nginx default public directory
+COPY index.html /usr/share/nginx/html/index.html
+
+Step 3: Build the Docker Image
+docker build -t my-docker-app . #my-docker-app → name of your image , . → means build using the current directory
+
+
+Step 4: Run the Docker Container
+docker run -d -p 8080:80 --name my-container my-docker-app #-d → run in background ,-p 8080:80 → map localhost port 8080 → container port 80
+
+
+Step 5: Test the Application
+
+Open your browser: http://localhost:8080
+
+You should see: Hello, Docker! My first containerized application.
+
+Step 6: Check Running Containers
+docker ps
+
+Step 7: Stop and Remove Container (Optional)
+docker stop my-container
+docker rm my-container
