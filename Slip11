@@ -34,9 +34,7 @@ docker run -d -p 8080:80 --name my-container my-docker-app
 
 
 Step 5: Test the Application
-
 Open your browser: http://localhost:8080
-
 You should see: Hello, Docker! My first containerized application.
 
 Step 6: Check Running Containers
