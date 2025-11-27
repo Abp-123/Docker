@@ -2,6 +2,7 @@ Create project folder:
 mkdir DockerWebApp
 cd DockerWebApp
 
+
 Create a simple index.html:
 echo "<h1>Hello from Docker Nginx!</h1>" > index.html
 
