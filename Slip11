@@ -24,11 +24,13 @@ FROM nginx:alpine
 COPY index.html /usr/share/nginx/html/index.html
 
 Step 3: Build the Docker Image
-docker build -t my-docker-app . #my-docker-app → name of your image , . → means build using the current directory
+docker build -t my-docker-app . 
+#my-docker-app → name of your image , . → means build using the current directory
 
 
 Step 4: Run the Docker Container
-docker run -d -p 8080:80 --name my-container my-docker-app #-d → run in background ,-p 8080:80 → map localhost port 8080 → container port 80
+docker run -d -p 8080:80 --name my-container my-docker-app 
+#-d → run in background ,-p 8080:80 → map localhost port 8080 → container port 80
 
 
 Step 5: Test the Application
